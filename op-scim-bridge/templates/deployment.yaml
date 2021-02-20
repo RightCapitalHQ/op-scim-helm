@@ -54,6 +54,9 @@ spec:
             - name: http-app
               containerPort: 8080
               protocol: TCP
+            - name: https-app
+              containerPort: 8443
+              protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

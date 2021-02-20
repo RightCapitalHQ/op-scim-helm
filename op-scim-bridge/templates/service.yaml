@@ -6,10 +6,10 @@ metadata:
     app.kubernetes.io/component: op-scim-bridge
     {{- include "op-scim-bridge.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: LoadBalancer
   ports:
     - port: 443
-      targetPort: http-app
+      targetPort: https-app
       protocol: TCP
       name: https
     - port: 80
